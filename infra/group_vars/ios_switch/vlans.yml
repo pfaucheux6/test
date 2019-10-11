@@ -1,0 +1,7 @@
+---
+vlans :
+  - { id: 100 , name: "Ventes", address: "172.16.100.1", mask: "255.255.0.0" }
+  - { id: 200 , name: "Ressources Humaines", address: "172.16.200.1", mask: "255.255.0.0" }
+  - { id: 300 , name: "Ingenieurs", address: "172.16.300.1", mask: "255.255.0.0" }
+  - { id: 400 , name: "TelephonesIP", address: "172.16.400.1", mask: "255.255.0.0" }
+  - { id: 600 , name: "WIFI", address: "172.16.600.1", mask: "255.255.0.0" }

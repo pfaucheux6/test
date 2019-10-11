@@ -1,0 +1,9 @@
+{% for dhcp in dhcp %}
+
+ip dhcp pool {{ dhcp.interface }}
+network {{ dhcp.network }}.{{ dhcp.address }} {{ dhcp.mask }} 
+dns-server {{ dhcp.dns }}
+default-router {{ dhcp.network }}.{{ dhcp.default }}
+no shutdown
+
+{% endfor %}

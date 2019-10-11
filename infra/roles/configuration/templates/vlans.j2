@@ -1,0 +1,10 @@
+{% for vlan in vlans %}
+
+vlan {{ vlan.id }}
+name {{ vlan.name }}
+interface vlan {{ vlan.id }}
+ip address {{ vlan.address }} {{ vlan.mask }}
+no shutdown
+exit
+
+{% endfor %}
