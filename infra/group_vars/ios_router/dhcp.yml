@@ -1,0 +1,2 @@
+dhcp:
+  - { interface: CLIENT_LAN, network: 172.16.100, address: 0, mask: 255.255.0.0, default: 1, dns: 8.8.8.8 }

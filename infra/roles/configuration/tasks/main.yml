@@ -1,0 +1,26 @@
+---
+# tasks file for configuration
+
+- name: Generer vlans a partir du template vlans.yml
+  template:
+    src=vlans.j2
+    dest=./configuration/vlans.cfg
+  delegate_to: localhost
+  when: inventory_hostname in groups['ios_switch']
+
+- name: Generer la configuration DHCP a partir du template dhcp.yml
+  template:
+    src=dhcp.j2
+    dest=./configuration/dhcp.cfg
+  delegate_to: localhost
+  when: inventory_hostname in groups['ios_router']
+
+- name: Deploiement des vlans sur les switchs
+  ios_config:
+    src=./configuration/vlans.cfg
+  when: inventory_hostname in groups['ios_switch']
+
+- name: Deploiement de la configuration DHCP sur les routeurs
+  ios_config:
+    src=./configuration/dhcp.cfg
+  when: inventory_hostname in groups['ios_router']
